@@ -10,9 +10,9 @@ import cv2
 from insightface.app import FaceAnalysis
 from bson import ObjectId
 
-# Initialize InsightFace model globally with memory optimizations for Render Free Tier
-app = FaceAnalysis(name='buffalo_s', allowed_modules=['detection', 'recognition'])
-app.prepare(ctx_id=-1, det_size=(640, 640)) # ctx_id=-1 forces CPU usage
+# Initialize InsightFace model globally with EXTREME memory optimizations for Render Free Tier
+app = FaceAnalysis(name='buffalo_sc', allowed_modules=['detection', 'recognition'])
+app.prepare(ctx_id=-1, det_size=(320, 320)) # Reduced det_size saves ~70% RAM during detection
 
 
 router = APIRouter(
