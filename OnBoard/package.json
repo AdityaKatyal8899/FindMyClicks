@@ -1,0 +1,30 @@
+{
+  "name": "hero-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "framer-motion": "^12.34.2",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.575.0",
+    "mongodb": "^7.1.0",
+    "next": "16.1.6",
+    "next-auth": "^4.24.13",
+    "ogl": "^1.0.11",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "resend": "^6.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "25.3.0",
+    "@types/react": "19.2.14",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6"
+  }
+}

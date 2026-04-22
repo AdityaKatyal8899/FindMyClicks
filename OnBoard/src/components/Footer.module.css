@@ -1,0 +1,84 @@
+.footer {
+    padding: 4rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 2rem 2rem;
+    color: var(--text-secondary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+.mission {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 300px;
+    opacity: 0.7;
+}
+
+.colTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.link {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

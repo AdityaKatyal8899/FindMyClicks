@@ -1,0 +1,101 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 2rem;
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    /* Added subtle blur as requested */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+}
+
+.nav.scrolled {
+    top: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0.8rem 2rem;
+    background: rgba(8, 10, 15, 0.85);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.link:hover {
+    color: var(--foreground);
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--foreground);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+}

@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.log
+
+# S3/Local Data (if any)
+temp_uploads/
+*.onnx
+.insightface/
+*.bin
+*.index
+*.h5
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

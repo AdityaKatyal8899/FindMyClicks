@@ -1,0 +1,234 @@
+.main {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    font-family: var(--font-geist-sans);
+    position: relative;
+    overflow: hidden;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.inputGroup input {
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: rgba(124, 58, 237, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.button {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.success {
+    text-align: center;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.success p {
+    color: #10b981;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.link {
+    font-size: 0.85rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.backLink {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.backLink:hover {
+    color: #fff;
+}
+
+/* Google OAuth Button */
+.googleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-bottom: 0.5rem;
+}
+
+.googleButton:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+}
+
+.googleButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.25rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.divider span {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Already logged in panel */
+.alreadyLoggedIn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Logout button */
+.logoutButton {
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
