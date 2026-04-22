@@ -31,6 +31,7 @@ export default function Home() {
   const [message, setMessage] = useState(null);
   const [searchFile, setSearchFile] = useState(null);
   const [searchPreview, setSearchPreview] = useState(null);
+  const [serverStatus, setServerStatus] = useState("checking"); // 'checking', 'online', 'offline'
 
   const galleryInputRef = useRef(null);
   const folderInputRef = useRef(null);
@@ -71,6 +72,27 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [message]);
+
+  // Check Backend Server Status (Render Cold Start)
+  useEffect(() => {
+    const checkStatus = async () => {
+      try {
+        const res = await fetch(`${API_URL}/health`);
+        if (res.ok) {
+          setServerStatus("online");
+        } else {
+          setServerStatus("offline");
+        }
+      } catch {
+        setServerStatus("offline");
+      }
+    };
+    
+    checkStatus();
+    // Re-check every 30s
+    const interval = setInterval(checkStatus, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleLogout = async () => {
     localStorage.removeItem("token");
@@ -258,6 +280,12 @@ export default function Home() {
 
         <div className={styles.userControls}>
            <div className={styles.userInfo}>
+              <div className={`${styles.statusIndicator} ${styles[serverStatus]}`} title={`Server: ${serverStatus}`}>
+                <div className={styles.statusDot}></div>
+                <span className={styles.statusText}>
+                  {serverStatus === "checking" ? "Waking up..." : serverStatus}
+                </span>
+              </div>
               <button onClick={toggleTheme} className={styles.themeBtn} title="Toggle Theme">
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>

@@ -34,16 +34,15 @@ async def rate_limit_middleware(request: Request, call_next):
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-    ],
+    allow_origins=["*"], # Allow all for simulation/production flexibility
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "timestamp": time.time()}
 
 @app.on_event("startup")
 def check_mongo():

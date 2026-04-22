@@ -679,3 +679,13 @@
   color: #7c3aed;
   flex-shrink: 0;
 }
+/* Status Indicator */
+.statusIndicator { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.75rem; background: var(--bg-secondary); border-radius: 20px; border: 1px solid var(--border-color); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+.statusDot { width: 8px; height: 8px; border-radius: 50%; background: #9ca3af; }
+.online .statusDot { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+.online .statusText { color: #10b981; }
+.offline .statusDot { background: #ef4444; }
+.offline .statusText { color: #ef4444; }
+.checking .statusDot { background: #f59e0b; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0.4; transform: scale(1); } }
+@media (max-width: 600px) { .statusText { display: none; } }
