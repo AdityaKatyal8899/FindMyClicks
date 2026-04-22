@@ -44,3 +44,5 @@ temp_uploads/
 .idea/
 *.swp
 *.swo
+
+.start-services.bat
